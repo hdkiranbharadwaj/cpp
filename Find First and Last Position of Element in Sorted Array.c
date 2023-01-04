@@ -4,13 +4,13 @@ class Solution {
 int flag=0;
 int end=nums.length-1;
 int start=0;
-int mid;
+int mid=0;
     if(nums.length==0)
-    {
-         array[0]=-1;
+        {
+            array[0]=-1;
     array[1]=-1; 
      return array; 
-    }
+        }
 while(start<=end)
 {
     mid=(end+start)/2;
@@ -25,25 +25,32 @@ if(nums.length==1&&nums[0]==target)
 }
 
     if(flag==0) {
-    array[0]=-1;
+        
+   array[0]=-1;
     array[1]=-1; 
      return array; 
      }
 while(mid>-1)
 {
     if(mid==0||nums[mid-1]!=nums[mid])
-       array[0]=mid;
+       {array[0]=mid;
+       break;}
     else
     mid--;
 }
-while(mid<=nums.length)
+while(mid<nums.length)
 {
-    if(mid==nums.length||nums[mid+1]!=nums[mid])
-       array[0]=mid;
+    if(mid==nums.length-1)
+      { array[1]=mid;
+      break;}
+    if((nums[mid+1]!=nums[mid]))
+    {
+        array[1]=mid;
+      break;
+    }
     else
     mid++;
 }
-        return array;
-     
+     return array;
     }
 }
