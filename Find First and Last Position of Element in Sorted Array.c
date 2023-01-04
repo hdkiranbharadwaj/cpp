@@ -26,7 +26,20 @@ if(nums.length==1&&nums[0]==target)
     array[1]=-1; 
      return array; 
      }
-
+while(mid>-1)
+{
+    if(mid==0||nums[mid-1]!=nums[mid])
+       array[0]=mid;
+    else
+    mid--;
+}
+while(mid<=nums.length)
+{
+    if(mid==nums.length||nums[mid+1]!=nums[mid])
+       array[0]=mid;
+    else
+    mid++;
+}
      
     }
 }
