@@ -10,18 +10,17 @@ int mid;
 while(start<=end)
 {
     mid=(end+start)/2;
-    if(nums[mid]==target) {printf("%d",mid); flag=1;break;}
+    if(nums[mid]==target) { flag=1;break;}
     else if(target>nums[mid]) start=mid+1;
     else end=mid-1;
 }
 if(nums.length==1&&nums[0]==target)
-{ printf("hi");
+{ 
     array[0]=array[1]=0; 
      return array; 
 }
 
     if(flag==0) {
-        printf("hi");
    L:  array[0]=-1;
     array[1]=-1; 
      return array; 
@@ -40,6 +39,7 @@ while(mid<=nums.length)
     else
     mid++;
 }
+        return array;
      
     }
 }
