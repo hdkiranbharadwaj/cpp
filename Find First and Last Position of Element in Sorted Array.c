@@ -6,7 +6,11 @@ int end=nums.length-1;
 int start=0;
 int mid;
     if(nums.length==0)
-        goto L;
+    {
+         array[0]=-1;
+    array[1]=-1; 
+     return array; 
+    }
 while(start<=end)
 {
     mid=(end+start)/2;
@@ -21,7 +25,7 @@ if(nums.length==1&&nums[0]==target)
 }
 
     if(flag==0) {
-   L:  array[0]=-1;
+    array[0]=-1;
     array[1]=-1; 
      return array; 
      }
