@@ -6,11 +6,11 @@ int end=nums.length-1;
 int start=0;
 int mid=0;
     if(nums.length==0)
-        {
-            array[0]=-1;
+    {
+         array[0]=-1;
     array[1]=-1; 
      return array; 
-        }
+    }
 while(start<=end)
 {
     mid=(end+start)/2;
@@ -25,32 +25,27 @@ if(nums.length==1&&nums[0]==target)
 }
 
     if(flag==0) {
-        
-   array[0]=-1;
+    array[0]=-1;
     array[1]=-1; 
      return array; 
      }
 while(mid>-1)
 {
-    if(mid==0||nums[mid-1]!=nums[mid])
-       {array[0]=mid;
-       break;}
+    if(mid==0||nums[mid-1]!=nums[mid]){
+       array[0]=mid;break;}
     else
     mid--;
 }
 while(mid<nums.length)
 {
-    if(mid==nums.length-1)
-      { array[1]=mid;
-      break;}
-    if((nums[mid+1]!=nums[mid]))
+    if(mid==nums.length-1||nums[mid+1]!=nums[mid])
     {
-        array[1]=mid;
-      break;
+       array[1]=mid; break;
     }
     else
     mid++;
 }
-     return array;
+        return array;
+     
     }
 }
