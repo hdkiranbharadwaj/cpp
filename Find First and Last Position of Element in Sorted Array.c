@@ -28,7 +28,22 @@ if(numsSize==1&&*(nums)==target)
      return array; 
      }
     
- 
+ while(mid>-1)
+{
+    if(mid==0||*(num+mid-1)!=*(nums+mid)){
+       *(array)=mid;break;}
+    else
+    mid--;
+}
+while(mid<numsSize)
+{
+    if(mid==numsSize-1||*(num+mid+1)!=*(nums+mid))
+    {
+       *(array+1)=mid; break;
+    }
+    else
+    mid++;
+}
     *returnSize=2;
     return array;
 
