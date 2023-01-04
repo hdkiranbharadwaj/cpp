@@ -1,21 +1,23 @@
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
-int Lower(int target,int mid,int* nums)
+int Lower(int mid,int* nums)
 {
     if(mid==0||*(nums+mid)!=*(nums+mid-1))
     {
         return mid;
     }
-    return Lower (target,mid-1,nums);
+    else
+    return Lower (mid-1,nums);
 }
-int Upper(int target,int mid,int* nums,int n)
+int Upper(int mid,int* nums,int n)
 {
-    if(mid==n||*(nums+mid)!=*(nums+mid+1))
+    if(mid==n||(*(nums+mid)!=*(nums+mid+1)))
     {
         return mid;
     }
-    return Upper(target,mid+1,nums,n);
+    else
+    return Upper(mid+1,nums,n);
 }
 int* searchRange(int* nums, int numsSize, int target, int* returnSize){
 int* array=(int*)malloc(2*sizeof(int));
@@ -27,17 +29,19 @@ int mid;
 while(start<end)
 {
     mid=(end+start)/2;
-    if(mid==target) break;
+    if(*(nums+mid)==target) {printf("%d",mid); break;}
     else if(target>*(nums+mid)) start=mid+1;
     else end=mid-1;
 }
-    if(start>end) {
+    if(start>=end) {
    L:  *(array)=*(array+1)=-1; 
      *returnSize=2;
      return array; 
      }
-    *array= Lower(target,mid,nums);
-    *(array+1)= Upper(target,mid+1,nums,numsSize);
+    
+    *array= Lower(mid,nums);
+    *(array+1)= Upper(mid,nums,numsSize);
+    *returnSize=2;
     return array;
 
 }
