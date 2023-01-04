@@ -20,3 +20,12 @@ int Lower(int target,int mid,int* nums)
     }
     return Lower (target,mid-1,nums);
 }
+int Upper(int target,int mid,int* nums,int n)
+{
+    if(mid==n||*(nums+mid-1)!=*(nums+mid+1))
+    {
+        return mid;
+    }
+    return Upper(target,mid+1,nums,n)
+}
+
