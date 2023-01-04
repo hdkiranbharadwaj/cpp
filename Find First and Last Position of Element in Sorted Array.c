@@ -10,7 +10,7 @@ while(start<end)
     else if(target>*(nums+mid)) low=mid+1;
     else end=mid-1;
 }
-    if(start<end) {
+    if(start>end) {
      *(array)=*(array+1)=-1; 
      *returnSize=2;
      return array; 
