@@ -15,3 +15,8 @@ while(start<end)
 int Lower(int target,int mid,int* nums)
 {
     if(mid==0||*(nums+mid-1)!=*(nums+mid-1))
+    {
+        return mid;
+    }
+    return Lower (target,mid-1,nums);
+}
