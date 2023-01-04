@@ -3,7 +3,7 @@
  */
 int Lower(int target,int mid,int* nums)
 {
-    if(mid==0||*(nums+mid-1)!=*(nums+mid-1))
+    if(mid==0||*(nums+mid)!=*(nums+mid-1))
     {
         return mid;
     }
@@ -11,7 +11,7 @@ int Lower(int target,int mid,int* nums)
 }
 int Upper(int target,int mid,int* nums,int n)
 {
-    if(mid==n||*(nums+mid-1)!=*(nums+mid+1))
+    if(mid==n||*(nums+mid)!=*(nums+mid+1))
     {
         return mid;
     }
@@ -39,4 +39,5 @@ while(start<end)
     *array= Lower(target,mid,nums);
     *(array+1)= Upper(target,mid+1,nums,numsSize);
     return array;
+
 }
