@@ -10,4 +10,8 @@ while(start<end)
     else if(target>*(nums+mid)) low=mid+1;
     else end=mid-1;
 }
+    
 }
+int Lower(int target,int mid,int* nums)
+{
+    if(mid==0||*(nums+mid-1)!=*(nums+mid-1))
